@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>ListBox</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" /><link href="../demo.css" rel="stylesheet" type="text/css" />
+
+    
+    <script src="../../scripts/boot.js" type="text/javascript"></script>
+    
+       
+
+</head>
+<body>
+    <h1>ListBox </h1>      
+    
+    <h4>单选</h4>
+
+<mini-listbox id="listbox1" style="width:150px;height:100px;"
+    textField="text" valueField="id" 
+    url="../data/countrys.txt">
+</mini-listbox>
+
+
+    <h4>多选 + 多列</h4>
+<mini-listbox id="listbox2" style="width:400px;height:150px;" 
+    value="cn" onvaluechanged="onListBoxValueChanged" fitColumns="false" frozenColumns="1"
+    url="../data/countrys.txt" showCheckBox="true" multiSelect="true" >     
+    <columns>
+        <column header="ID" field="id"></column>
+        <column header="国家" field="text"></column>
+        <column header="国家" field="text" width="500"></column>
+        <column header="国家" field="text"></column>
+        <column header="国家" field="text"></column>
+    </columns>
+</mini-listbox>
+    
+    <script type="text/javascript">
+        function onListBoxValueChanged(e) {
+            var listbox = e.sender;
+            var value = listbox.getValue();
+            alert(value);
+        }
+
+  
+    </script>
+
+    <div class="description">
+        <h3>Description</h3>
+        <p>
+        </p>
+    </div>
+</body>
+</html>
